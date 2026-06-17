@@ -26,7 +26,11 @@ const env = {
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '7d',
   frontendUrl: process.env.FRONTEND_URL || 'http://localhost:5173',
   androidAppUrl: process.env.ANDROID_APP_URL || 'taskflowpro://auth',
-  corsOrigin: parseList(process.env.CORS_ORIGIN, ['http://localhost:5173']),
+  corsOrigin: [
+    ...parseList(process.env.CORS_ORIGIN, ['http://localhost:5173']),
+    'https://admin-taskflow-pro.netlify.app',
+    'https://taskflow-ltd.netlify.app'
+  ],
   emailVerificationRequired: process.env.EMAIL_VERIFICATION_REQUIRED === 'true',
   smtp: {
     host: process.env.SMTP_HOST,
