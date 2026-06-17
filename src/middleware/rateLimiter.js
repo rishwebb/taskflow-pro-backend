@@ -14,6 +14,7 @@ const generalLimiter = rateLimit({
   max: env.rateLimit.max,
   standardHeaders: true,
   legacyHeaders: false,
+  skip: (req) => req.method === 'OPTIONS',
   handler: standardHandler
 });
 
@@ -22,6 +23,7 @@ const authLimiter = rateLimit({
   max: env.rateLimit.authMax,
   standardHeaders: true,
   legacyHeaders: false,
+  skip: (req) => req.method === 'OPTIONS',
   handler: standardHandler
 });
 
