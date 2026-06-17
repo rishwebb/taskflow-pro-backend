@@ -1,0 +1,43 @@
+{
+  "name": "taskflow-pro-backend",
+  "version": "1.0.0",
+  "description": "Production-ready Node.js, Express, and MongoDB Atlas API for TaskFlow Pro.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/config/db.js && node --check src/config/env.js && node --check src/controllers/authController.js && node --check src/controllers/userController.js && node --check src/controllers/taskController.js && node --check src/controllers/notificationController.js && node --check src/middleware/auth.js && node --check src/middleware/errorHandler.js && node --check src/middleware/rateLimiter.js && node --check src/middleware/validate.js && node --check src/models/User.js && node --check src/models/Task.js && node --check src/models/Notification.js && node --check src/routes/authRoutes.js && node --check src/routes/userRoutes.js && node --check src/routes/taskRoutes.js && node --check src/routes/notificationRoutes.js && node --check src/routes/healthRoutes.js && node --check src/utils/asyncHandler.js && node --check src/utils/email.js && node --check src/utils/httpError.js && node --check src/utils/tokens.js && node --check src/validators/authValidators.js && node --check src/validators/userValidators.js && node --check src/validators/taskValidators.js && node --check src/validators/notificationValidators.js && node --check scripts/seedUsers.js",
+    "seed:users": "node scripts/seedUsers.js",
+    "verify:runtime": "node scripts/runtimeSmoke.js"
+  },
+  "keywords": [
+    "taskflow",
+    "express",
+    "mongodb",
+    "jwt",
+    "api"
+  ],
+  "author": "TaskFlow Pro",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.16"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
